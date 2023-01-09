@@ -72,5 +72,17 @@
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>bootstrap-scss</artifactId>
+            <version>4.4.1</version>
+        </dependency>
     </dependencies>
 </project>
