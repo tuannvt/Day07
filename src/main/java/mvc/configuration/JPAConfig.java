@@ -5,8 +5,6 @@
  */
 package mvc.configuration;
 
-import mvc.controller.HelloMessageGenerator;
-import mvc.entity.CartEntity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -19,7 +17,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import mvc.service.AccountService;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
@@ -78,39 +75,4 @@ public class JPAConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    // Set bean AccountService with platform transaction manager
-    @Bean
-    public AccountService accountService(JpaTransactionManager jpaTransactionManager){
-        AccountService accountService = new AccountService(jpaTransactionManager);
-        return accountService;
-    }
-
-    // Set bean AccountService using Annatation
-    @Bean
-    public AccountService accountService(){
-        AccountService accountService = new AccountService();
-        return accountService;
-    }
-    @Bean
-    @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
-    public HelloMessageGenerator requestScopedBean() {
-        return new HelloMessageGenerator();
-    }
-
-    @Bean
-    @SessionScope
-    public HelloMessageGenerator sessionScopedBean() {
-        return new HelloMessageGenerator();
-    }
-
-    @Bean
-    @ApplicationScope
-    public HelloMessageGenerator applicationScopedBean() {
-        return new HelloMessageGenerator();
-    }
-    @Bean
-    @SessionScope
-    public List<CartEntity> sessionCart() {
-        return new ArrayList<>();
-    }
 }
