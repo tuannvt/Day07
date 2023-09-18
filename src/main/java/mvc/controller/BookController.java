@@ -63,7 +63,7 @@ public class BookController {
         return "book/book";
     }
     @RequestMapping(value = "/newBook", method = POST, produces="text/plain;charset=UTF-8")
-    public String save(@Validated(BasicInfor.class) @ModelAttribute("book") BookEntity book,
+    public String save(@Valid @ModelAttribute("book") BookEntity book,
                        BindingResult bindingResult, Model model){
 
         if (bindingResult.hasErrors()) {

@@ -29,15 +29,15 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Author (*)</label>
-                <form:input type="text" class="form-control col-md-6" path="author" required="true" />
+                <form:input type="text" class="form-control col-md-6" path="author"  />
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">ISBN (*)</label>
-                <form:input type="text" class="form-control col-md-6" path="bookDetails.isbn" required="true" />
+                <form:input type="text" class="form-control col-md-6" path="bookDetails.isbn" />
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Price (*)</label>
-                <form:input type="text" class="form-control col-md-6" path="bookDetails.price" required="true" />
+                <form:input type="text" class="form-control col-md-6" path="bookDetails.price"  />
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Number of page (*)</label>
@@ -47,7 +47,7 @@
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Publish Date (*)</label>
-                <form:input type="date" class="form-control col-md-6" path="bookDetails.publishDate" required="true" />
+                <form:input type="date" class="form-control col-md-6" path="bookDetails.publishDate"  />
               </div>
               <div class="form-group">
                 <label for="inputState">Category (*)</label>

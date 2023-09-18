@@ -73,6 +73,7 @@
                             ${user.noSmoking}
                         </td>
                     </tr>
+                    <button class="btn btn-sm btn-primary" onclick="location.href='remove-session'">Remove Session</button>
                 </table>
             </mvc:form>
         </body>

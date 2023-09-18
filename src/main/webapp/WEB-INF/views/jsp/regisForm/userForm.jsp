@@ -3,11 +3,20 @@
         <html>
 
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>User Registration Form</title>
+        <link rel="stylesheet" type="text/css" href='${pageContext.request.getContextPath()}/webjars/bootstrap/5.1.3/css/bootstrap.min.css' />
+        <script type="text/javascript" src="${pageContext.request.getContextPath()}/webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>User Registration Form</title>
+         <style>
+           <%@include file="/resources/css/main.css" %>
+         </style>
+            <jsp:include page="header.jsp" />
         </head>
 
         <body>
+        <div class="contain pt-10">
             <h1>User Registration Form</h1>
             <mvc:form modelAttribute="user" action="result">
                 <table>
@@ -77,11 +86,12 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" value="Submit">
+                            <input class="btn btn-primary" type="submit" value="Submit">
                         </td>
                     </tr>
                 </table>
             </mvc:form>
+        <div>
         </body>
 
         </html>

@@ -13,7 +13,7 @@
        <style>
           <%@include file="/resources/css/main.css" %>
        </style>
- <jsp:include page="header.jsp" />
+  <jsp:include page="header.jsp" />
       <body>
 
         <div class="container">

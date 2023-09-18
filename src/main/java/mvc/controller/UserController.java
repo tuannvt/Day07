@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class UserController {
     private static final String[] countries = {"Viet Nam", "United States","Germany"};
@@ -18,7 +21,25 @@ public class UserController {
         return "regisForm/userForm";
     }
     @RequestMapping(value = "/result")
-    public String processUser(User user){
+    public String processUser(User user, HttpSession session){
+        // Save data to session
+        session.setAttribute("username", user.getName());
         return "regisForm/userResult";
+    }
+
+    @RequestMapping(value = "/session-test")
+    public String showSessionTest(Model model, HttpServletRequest request){
+        // get data from session
+        String username = (String) request.getSession().getAttribute("username");
+        model.addAttribute("username", username);
+        return "regisForm/session";
+    }
+
+    @RequestMapping(value = "/remove-session")
+    public String removeSession(Model model, HttpServletRequest request){
+        // remove data from session
+        request.getSession().removeAttribute("username");
+
+        return "redirect:/sessions";
     }
 }

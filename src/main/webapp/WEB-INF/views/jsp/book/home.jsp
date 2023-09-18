@@ -10,13 +10,16 @@
 
         <body>
           <div class="contain pt-10">
-            <div class="form-inline my-2 my-lg-0">
-              <form:form action="search" method="get">
-                <input name="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search"
-                  aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form:form>
-            </div>
+            <!-- Input group -->
+            <form:form action="search" method="get">
+              <div class="d-flex ">
+                <div class="input-group w-auto">
+                  <input name="searchInput" type="text" class="form-control" placeholder="Search input" aria-label="Search input"/>
+                  <button class="btn btn-primary" type="submit"  data-mdb-ripple-color="dark">Search
+                  </button>
+                </div>
+              </div>
+            </form:form>
 
             <div class="mt-10">
               <p>

@@ -1,25 +1,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
-<link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>">
+<link rel="stylesheet" type="text/css" href='${pageContext.request.getContextPath()}/webjars/bootstrap/5.1.3/css/bootstrap.min.css' />
+<script type="text/javascript" src="${pageContext.request.getContextPath()}/webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
     <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/myOrders">My Order</a>
+              </li>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
-  <a class="navbar-brand" href="/">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-       <a class="nav-link" href="/myCart">My Cart</span></a>
-      <a class="nav-link" href="/myOrders">My Orders</span></a>
 
-    </div>
-  </div>
-
-</nav>
+            </ul>
+          </div>
+        </nav>
     </div>
