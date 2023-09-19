@@ -1,6 +1,8 @@
 package mvc.controller;
 
 
+import mvc.Entity.Gender;
+import mvc.Entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -28,5 +30,17 @@ public class HelloController {
 	   model.addAttribute("country", country);
 
 		return "helloWorld/greeting";
+	}
+	private static final String[] countries={"VietNam","United States","Germa-ny"};
+	@RequestMapping(value ="/register")
+	public String showRegistrationForm(Model model){
+		model.addAttribute("user",new User());
+		model.addAttribute("genders", Gender.values());
+		model.addAttribute("countries",countries);
+		return "helloWorld/userForm";
+	}
+	@RequestMapping(value = "/result")
+	public String processUser(User user){
+		return "helloWorld/userResul";
 	}
 }
